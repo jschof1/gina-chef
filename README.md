@@ -8,6 +8,25 @@ Vite + React + React Router (HashRouter for simple static hosting).
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview the production build
 
+## Cloudflare Pages (GitHub)
+
+1. Push this repo to GitHub if it is not already there.
+2. In Cloudflare: **Workers & Pages** → **Create** → **Pages** → **Connect to Git** → choose the repository.
+3. **Build settings**
+   - **Framework preset:** Vite (or **None** with **Build command** `npm run build` and **Build output directory** `dist`).
+   - **Root directory:** `/` (repository root).
+4. Under **Environment variables** (production + preview), add **`NODE_VERSION`** = **`20`** so the build uses a current Node runtime (matches `.nvmrc`).
+5. Save and deploy. Production tracks your default branch; other branches and PRs get preview URLs.
+
+`wrangler.jsonc` documents the Pages output directory for Wrangler and keeps local commands consistent:
+
+```bash
+npx wrangler whoami
+npx wrangler pages deploy ./dist --project-name=gina-chef
+```
+
+Use the dashboard Git connection for ongoing deploys; the command above is optional for manual uploads.
+
 ## Project structure
 
 ```
