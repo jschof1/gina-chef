@@ -72,7 +72,7 @@ export function Hero({ image, eyebrow, title, copy, primaryCta, secondaryCta }) 
               {copy}
             </p>
           )}
-          <div className="mt-12 flex flex-wrap gap-6">
+          <div className="mt-6 flex flex-wrap gap-4">
             <div className="hero-cta">{primaryCta}</div>
             <div className="hero-cta">{secondaryCta}</div>
           </div>

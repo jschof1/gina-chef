@@ -129,7 +129,7 @@ export function HomePage() {
                 className="portrait-img absolute -top-[10%] left-0 h-[120%] w-full object-cover origin-center"
               />
             </div>
-            <div className="space-y-10">
+            <div className="space-y-6">
               <SectionHeading
                 eyebrow="How I cook"
                 title="Food that feels personal, generous and memorable."
@@ -231,7 +231,7 @@ export function HomePage() {
                   From relaxed sharing plates to a multi-course celebration,
                   every menu begins with what you love and how you want the occasion to feel.
                 </p>
-                <div className="mt-12">
+                <div className="mt-6">
                   <PrimaryButton to="/menus">Explore the menus</PrimaryButton>
                 </div>
               </div>
@@ -297,7 +297,7 @@ export function HomePage() {
               Drop me a message with your date, guest numbers, and the kind of
               night you have in mind. I&apos;ll come back to you from there.
             </p>
-            <div className="mt-12">
+            <div className="mt-6">
               <PrimaryButton to="/contact">Get in touch</PrimaryButton>
             </div>
           </div>

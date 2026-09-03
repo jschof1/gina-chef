@@ -72,7 +72,7 @@ export function ContactPage() {
             <div className="mt-7"><Field label="Additional details"><textarea className="form-field min-h-40 resize-y" name="details" value={form.details} onChange={updateField} /></Field></div>
             <label className="mt-7 flex cursor-pointer items-start gap-4 text-on-surface-variant"><input type="checkbox" name="consent" required checked={form.consent} onChange={updateField} className="mt-1 h-5 w-5 rounded border-white/20 bg-black/20 text-primary" /><span>I agree that Georgina may use these details to respond to my enquiry by phone or email. My details will not be shared.</span></label>
             <p className="mt-5 text-sm leading-relaxed text-stone-500">This website does not send or store the form. It prepares an email in your own email app so you can review it before choosing to send.</p>
-            <div className="mt-8"><PrimaryButton type="submit">Prepare enquiry email</PrimaryButton></div>
+            <div className="mt-5"><PrimaryButton type="submit">Prepare enquiry email</PrimaryButton></div>
             {prepared && <div className="mt-8 rounded-2xl border border-primary/30 bg-primary/10 p-6"><p className="font-semibold text-primary">Your email draft is ready.</p><p className="mt-2 text-sm text-on-surface-variant">Check your details, then open the draft in your email app. Nothing has been sent yet.</p><a href={emailDraft} className="mt-5 inline-flex font-bold uppercase tracking-[0.16em] text-primary underline">Open email draft</a></div>}
           </form>
         </div>

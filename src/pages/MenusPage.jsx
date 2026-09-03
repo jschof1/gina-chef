@@ -30,7 +30,7 @@ export function MenusPage() {
                     <p className="text-xs font-bold uppercase tracking-[0.28em] text-primary">{collection.label}</p>
                     <h2 className="mt-5 font-serif text-4xl md:text-6xl">{collection.name}</h2>
                     <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">{collection.intro}</p>
-                    <details className="group mt-10">
+                    <details className="group mt-6">
                       <summary className="inline-flex cursor-pointer list-none items-center gap-3 rounded-full border border-primary/40 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-primary hover:bg-primary hover:text-on-primary">Explore dishes <span className="material-symbols-outlined transition-transform group-open:rotate-45">add</span></summary>
                       <div className="mt-8 grid gap-8 sm:grid-cols-2">
                         {collection.courses.map((course) => <div key={course.title}><h3 className="font-serif text-2xl text-primary">{course.title}</h3><ul className="mt-4 space-y-3 text-sm leading-relaxed text-stone-300">{course.items.map((item) => <li key={item} className="border-b border-white/5 pb-3">{item}</li>)}</ul></div>)}
