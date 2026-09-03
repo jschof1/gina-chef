@@ -225,7 +225,7 @@ export function HomePage() {
               <div className="absolute inset-0 bg-black/35" />
               <div className="relative mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-6 py-24 text-center">
                 <h2 className="font-serif text-6xl leading-tight text-primary md:text-8xl">
-                  A food for every mood
+                  Fine dining is not just for the restaurant
                 </h2>
                 <p className="mt-8 max-w-2xl text-xl leading-relaxed text-stone-200 font-light">
                   From relaxed sharing plates to a multi-course celebration,

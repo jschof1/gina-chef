@@ -13,7 +13,7 @@ export function ReviewsPage() {
       <Hero image={images.galleryD} eyebrow="Guest reviews" title="Empty plates. Happy guests." copy="There is nothing more rewarding than a table that has enjoyed every course. Here are a few thoughts from previous dinners." primaryCta={<PrimaryButton to="/contact">Ask about a date</PrimaryButton>} />
       <section className="bg-surface-container-low px-6 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="In their words" title="Kind words from the table." copy="Selected from Georgina’s supplied Yhangry and Take a Chef review collections. Wording has been lightly corrected for spelling and punctuation without changing meaning." align="center" />
+          <SectionHeading eyebrow="In their words" title="Kind words from the table." copy="Selected from Georgina’s supplied Yhangry and Take a Chef review collections. These excerpts have been condensed for length, with spelling and punctuation lightly corrected, while preserving the reviewers’ meaning." align="center" />
           <div className="mt-16 grid gap-6 md:grid-cols-2">
             {testimonials.map((review) => (
               <article key={`${review.attribution}-${review.source}`} className="rounded-[2rem] border border-white/5 bg-background p-8 md:p-10">

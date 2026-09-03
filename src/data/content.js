@@ -100,4 +100,23 @@ export const chefPlatforms = [
   { label: "Take a Chef", href: "https://www.takeachef.com/en-gb/our-chefs" },
 ];
 
-export const galleryImages = [images.galleryA, images.galleryB, images.galleryC, images.galleryD, images.galleryE, images.galleryF, images.galleryG, images.galleryH, images.galleryI, images.galleryJ, images.galleryK, images.galleryL];
+export const galleryImages = [
+  { src: images.galleryA, alt: "A plated private dining course by Chef Georgina" },
+  { src: images.galleryB, alt: "Seasonal ingredients prepared for a private dinner" },
+  { src: images.galleryC, alt: "A colourful course from Chef Georgina's kitchen" },
+  { src: images.galleryD, alt: "Chef Georgina finishing a private dining dish" },
+  { src: images.galleryE, alt: "A carefully presented private dining plate" },
+  { src: images.galleryF, alt: "Fresh produce used in Chef Georgina's cooking" },
+  { src: images.galleryG, alt: "A seasonal dish prepared for guests" },
+  { src: images.galleryH, alt: "A detail from a Chef Georgina dining experience" },
+  { src: images.galleryI, alt: "A private dining dish made with seasonal ingredients" },
+  { src: images.galleryJ, alt: "A finished course ready for the table" },
+  { src: images.galleryK, alt: "A handmade dish from Chef Georgina's menu" },
+  { src: images.galleryL, alt: "A final detail from a private dining occasion" },
+  { src: images.driveGallery2_15, alt: "Locally sourced apples ready for preparation" },
+  { src: images.driveGallery4696, alt: "A colourful skewer and fresh salads being prepared" },
+  { src: images.driveGallery4979, alt: "The entrance to a private dining venue" },
+  { src: images.driveGallery5016, alt: "Vintage tableware arranged for guests" },
+  { src: images.driveGallery5063, alt: "Seasonal salads served for sharing" },
+  { src: images.driveGallery5077, alt: "A salmon course enjoyed at the table" },
+];
