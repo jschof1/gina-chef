@@ -1,126 +1,55 @@
-import { useRef } from "react";
+import { PageMeta } from "../components/PageMeta.jsx";
 import { PageShell } from "../components/layout/PageShell.jsx";
 import { Hero } from "../components/ui/Hero.jsx";
 import { PrimaryButton } from "../components/ui/PrimaryButton.jsx";
 import { SectionHeading } from "../components/ui/SectionHeading.jsx";
 import { images } from "../data/assets.js";
-import { menuCollections } from "../data/content.js";
-import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap.js";
+import { extras, menuCollections, menuStyles, site } from "../data/content.js";
 
 export function MenusPage() {
-  const containerRef = useRef(null);
-
-  useGSAP(() => {
-    // Menu collection stagger
-    const collections = gsap.utils.toArray('.menu-collection');
-    collections.forEach((collection, i) => {
-      gsap.from(collection, {
-        y: 80,
-        opacity: 0,
-        rotateX: 5,
-        duration: 1.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: collection,
-          start: 'top 85%',
-        }
-      });
-
-      // Stagger list items
-      const items = collection.querySelectorAll('.menu-item');
-      gsap.from(items, {
-        x: -30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: collection,
-          start: 'top 70%',
-        }
-      });
-
-      // Image reveal with scale
-      const imgContainer = collection.querySelector('.menu-img-container');
-      gsap.from(imgContainer, {
-        clipPath: i % 2 === 0 ? 'inset(0% 100% 0% 0%)' : 'inset(0% 0% 0% 100%)',
-        duration: 1.5,
-        ease: 'power4.inOut',
-        scrollTrigger: {
-          trigger: collection,
-          start: 'top 75%',
-        }
-      });
-      
-      const imgEl = collection.querySelector('.menu-img');
-      gsap.from(imgEl, {
-        scale: 1.3,
-        duration: 1.5,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: collection,
-          start: 'top 75%',
-        }
-      });
-    });
-  }, { scope: containerRef });
-
   return (
     <PageShell>
-      <div ref={containerRef}>
-        <Hero
-          image={images.menuHero}
-          eyebrow="Menus"
-          title="Sample menus, always tailored by me."
-          copy="I write bespoke menus for every booking. What you see below are ideas and flavours I love to cook, not a fixed menu you have to choose from."
-          primaryCta={<PrimaryButton to="/contact">Ask me about a menu</PrimaryButton>}
-        />
+      <PageMeta title={`Sample Menus | ${site.brand}`} description="Explore seasonal British, Modern European, Italian and brunch menu ideas from Chef Georgina. Every menu is bespoke." />
+      <Hero image={images.menuHero} eyebrow="Menus" title="A beginning, never a fixed script" copy="These menus offer a sense of Chef Georgina’s style. Every menu is designed for your meal, your tastes and your celebration, following the seasons and using local ingredients where possible." primaryCta={<PrimaryButton to="/contact">Create your menu</PrimaryButton>} />
 
-        <section className="px-6 py-32 md:px-8">
-          <div className="mx-auto max-w-7xl">
-            <SectionHeading
-              eyebrow="Bespoke by design"
-              title="A few ideas, never a fixed script."
-              copy="Every booking starts with a conversation. These samples show the tone of how I cook and the kinds of dishes that might shape your evening."
-              align="center"
-            />
-            <div className="mt-24 space-y-24 perspective-[1000px]">
-              {menuCollections.map((collection, index) => (
-                <div
-                  key={collection.name}
-                  className={`menu-collection grid gap-12 rounded-[3rem] border border-white/5 bg-surface-container-low p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.18)] ${
-                    index % 2 === 0 ? "md:grid-cols-[1.1fr_0.9fr]" : "md:grid-cols-[0.9fr_1.1fr]"
-                  }`}
-                >
-                  <div className={`flex flex-col justify-center ${index % 2 === 0 ? "" : "md:order-2"}`}>
-                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">{collection.label}</p>
-                    <h2 className="mt-6 font-serif text-4xl md:text-5xl">{collection.name}</h2>
-                    <p className="mt-6 max-w-2xl text-xl leading-relaxed text-on-surface-variant font-light">
-                      I can shape the night as a multi-course dinner, a canapé-led
-                      gathering, or something more relaxed and sharing-style.
-                    </p>
-                    <ul className="mt-10 space-y-4">
-                      {collection.items.map((item) => (
-                        <li
-                          key={item}
-                          className="menu-item rounded-[1.5rem] border border-white/5 bg-black/20 px-6 py-5 text-stone-200 transition-colors hover:bg-black/40 hover:border-white/10"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+      <section className="px-6 py-24 md:px-8 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading eyebrow="Bespoke by design" title="Choose the feeling. We’ll shape the food." copy="Plan three to five courses, a family-style sharing table or something completely personal. Dietary and allergen requirements can be accommodated, and children’s menus are available." align="center" />
+          <div className="mx-auto mt-12 flex max-w-5xl flex-wrap justify-center gap-3">
+            {menuStyles.map((style) => <span key={style} className="rounded-full border border-white/10 bg-surface-container-low px-5 py-3 text-sm text-stone-300">{style}</span>)}
+          </div>
+
+          <div className="mt-20 space-y-16">
+            {menuCollections.map((collection, index) => (
+              <article key={collection.slug} id={collection.slug} className="scroll-mt-28 overflow-hidden rounded-[3rem] border border-white/5 bg-surface-container-low shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+                <div className={`grid lg:grid-cols-2 ${index % 2 ? "" : ""}`}>
+                  <div className={index % 2 ? "lg:order-2" : ""}>
+                    <img src={collection.image} alt={`${collection.name} menu by Chef Georgina`} className="h-full min-h-[28rem] w-full object-cover" />
                   </div>
-                  <div className={index % 2 === 0 ? "" : "md:order-1"}>
-                    <div className="menu-img-container h-full overflow-hidden rounded-[2rem] min-h-[400px]">
-                      <img src={collection.image} alt="" className="menu-img h-full w-full object-cover" />
-                    </div>
+                  <div className="flex flex-col justify-center p-8 md:p-12">
+                    <p className="text-xs font-bold uppercase tracking-[0.28em] text-primary">{collection.label}</p>
+                    <h2 className="mt-5 font-serif text-4xl md:text-6xl">{collection.name}</h2>
+                    <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">{collection.intro}</p>
+                    <details className="group mt-10">
+                      <summary className="inline-flex cursor-pointer list-none items-center gap-3 rounded-full border border-primary/40 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-primary hover:bg-primary hover:text-on-primary">Explore dishes <span className="material-symbols-outlined transition-transform group-open:rotate-45">add</span></summary>
+                      <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                        {collection.courses.map((course) => <div key={course.title}><h3 className="font-serif text-2xl text-primary">{course.title}</h3><ul className="mt-4 space-y-3 text-sm leading-relaxed text-stone-300">{course.items.map((item) => <li key={item} className="border-b border-white/5 pb-3">{item}</li>)}</ul></div>)}
+                      </div>
+                    </details>
                   </div>
                 </div>
-              ))}
-            </div>
+              </article>
+            ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section className="bg-surface-container-low px-6 py-24 md:px-8 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <SectionHeading eyebrow="A little more" title="Add something special." copy="Optional additions can be included at extra cost. Ask what will work best with your menu, location and occasion." />
+          <div className="grid gap-4 sm:grid-cols-2">{extras.map((extra) => <div key={extra} className="flex gap-4 rounded-2xl bg-background p-5"><span className="material-symbols-outlined text-primary">add_circle</span><p>{extra}</p></div>)}</div>
+        </div>
+      </section>
     </PageShell>
   );
 }

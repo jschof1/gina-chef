@@ -1,10 +1,11 @@
 import { useRef } from "react";
 import { PageShell } from "../components/layout/PageShell.jsx";
+import { PageMeta } from "../components/PageMeta.jsx";
 import { Hero } from "../components/ui/Hero.jsx";
 import { PrimaryButton } from "../components/ui/PrimaryButton.jsx";
 import { SectionHeading } from "../components/ui/SectionHeading.jsx";
 import { images } from "../data/assets.js";
-import { aboutPillars } from "../data/content.js";
+import { aboutPillars, site } from "../data/content.js";
 import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap.js";
 
 const aboutGalleryImages = [
@@ -74,11 +75,12 @@ export function AboutPage() {
   return (
     <PageShell>
       <div ref={containerRef}>
+        <PageMeta title={`About Georgina Stinton | ${site.brand}`} description="Meet Chef Georgina and discover her seasonal, sustainable approach to private dining and local British produce." />
         <Hero
           image={images.aboutHero}
           eyebrow="About me"
-          title="Hi, I'm Ginna"
-          copy="I'm a private chef. I believe food should feel generous, considered, and rooted in good ingredients, and that a shared meal is one of the best ways to mark a moment."
+          title="Hi, I'm Georgina"
+          copy="I’m a private chef with a deep-rooted passion for food and cooking, creating memorable dining experiences with fresh, locally sourced ingredients and authentic flavour."
           primaryCta={<PrimaryButton to="/contact">Get in touch</PrimaryButton>}
         />
 
@@ -87,20 +89,19 @@ export function AboutPage() {
             <div className="about-portrait-container relative h-[70vh] overflow-hidden rounded-[3rem]">
               <img
                 src={images.portrait}
-                alt="Portrait placeholder"
+                alt="Chef Georgina Stinton"
                 className="about-portrait absolute -top-[10%] left-0 h-[120%] w-full object-cover origin-center"
               />
             </div>
             <div className="space-y-10">
               <SectionHeading
                 eyebrow="My approach"
-                title="A meal shared is a moment."
-                copy="I cook private dinners built around memorable experiences, thoughtful menus, and food that feels elevated but still genuinely welcoming."
+                title="It’s not just a meal. It’s an experience."
+                copy="My menus follow the seasons and evolve continuously. Each meal is designed to be a feast for the eyes as well as the palate, tailored to different tastes and occasions."
               />
               <p className="text-xl leading-relaxed text-on-surface-variant font-light">
-                I care about where ingredients come from, cooking with honesty, and
-                making meals that do more than fill people up. I want you to leave
-                the table feeling looked after.
+                I combine careful preparation, thoughtful service and generous
+                hosting so you can enjoy your guests while I bring the whole dining experience together.
               </p>
             </div>
           </div>
@@ -110,8 +111,8 @@ export function AboutPage() {
           <div className="mx-auto max-w-7xl">
             <SectionHeading
               eyebrow="What I buy and cook"
-              title="My menus follow the seasons."
-              copy="I work with local farmers and artisans where I can, and I choose what’s freshest and best so each menu has its own character and rhythm."
+              title="Sustainability starts with what I buy."
+              copy="I source seasonal and regional ingredients from nearby independent providers and artisans wherever possible. Shorter supply chains support nature-friendly farming, the local community and lower-waste cooking."
             />
             <div className="pillars-grid mt-20 grid gap-8 md:grid-cols-3 perspective-[1000px]">
               {aboutPillars.map((item) => (
@@ -123,6 +124,18 @@ export function AboutPage() {
                   <p className="mt-4 leading-relaxed text-on-surface-variant">{item.text}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-24 md:px-8 md:py-32">
+          <div className="mx-auto grid max-w-7xl gap-12 overflow-hidden rounded-[3rem] bg-surface-container-low lg:grid-cols-2">
+            <img src={images.aboutStatement} alt="A dish prepared with seasonal British produce" className="h-full min-h-[28rem] w-full object-cover" />
+            <div className="flex flex-col justify-center p-10 md:p-16">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Training and care</p>
+              <h2 className="mt-5 font-serif text-4xl md:text-5xl">Prepared with confidence.</h2>
+              <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">Georgina’s supplied information states Level 5 Food Hygiene and Level 2 Health and Safety qualifications. Dietary and allergen requirements are discussed as part of every menu consultation.</p>
+              <p className="mt-5 text-sm text-stone-500">Qualification details are recorded from the client brief and should be supported by certificate checks before launch.</p>
             </div>
           </div>
         </section>

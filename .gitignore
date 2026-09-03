@@ -4,6 +4,8 @@ node_modules
 # Build
 dist
 dist-ssr
+output
+work-requests
 *.local
 
 # Environment

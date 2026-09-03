@@ -26,10 +26,13 @@ export function RevealText({ text, className = "", delay = 0 }) {
   return (
     <span ref={containerRef} className={`inline-block ${className}`}>
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden pb-2 -mb-2 mr-[0.25em]">
-          <span className="reveal-word inline-block origin-bottom-left">
-            {word}
+        <span key={i}>
+          <span className="inline-block overflow-hidden pb-2 -mb-2">
+            <span className="reveal-word inline-block origin-bottom-left">
+              {word}
+            </span>
           </span>
+          {i < words.length - 1 ? ' ' : null}
         </span>
       ))}
     </span>

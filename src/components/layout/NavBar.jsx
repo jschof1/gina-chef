@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { navLinks } from "../../data/content.js";
+import { navLinks, site } from "../../data/content.js";
 import { motion, AnimatePresence } from "motion/react";
 
 export function NavBar() {
@@ -31,17 +31,17 @@ export function NavBar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-8">
-        <Link to="/" className="font-serif text-3xl tracking-tight text-stone-50 hover:text-primary transition-colors">
-          Ginna
+        <Link to="/" className="font-serif text-2xl tracking-tight text-stone-50 hover:text-primary transition-colors lg:text-3xl">
+          {site.brand}
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
           {links.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `relative text-xs font-semibold uppercase tracking-[0.25em] transition-colors ${
+                `relative text-[0.65rem] font-semibold uppercase tracking-[0.18em] transition-colors ${
                   isActive ? "text-primary" : "text-stone-300 hover:text-stone-50"
                 }`
               }
@@ -66,13 +66,13 @@ export function NavBar() {
         <div className="flex items-center gap-4">
           <Link
             to="/contact"
-            className="hidden rounded-full bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-[0.25em] text-on-primary transition-transform hover:scale-105 md:inline-flex"
+            className="hidden rounded-full bg-primary px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-on-primary transition-transform hover:scale-105 xl:inline-flex"
           >
-            Book me
+            Enquire
           </Link>
           <button
             type="button"
-            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-stone-100 transition-colors hover:bg-white/5 md:hidden"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-stone-100 transition-colors hover:bg-white/5 lg:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-label="Toggle navigation"
           >
@@ -88,7 +88,7 @@ export function NavBar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="border-t border-white/10 bg-stone-950/95 px-6 py-6 md:hidden overflow-hidden"
+            className="border-t border-white/10 bg-stone-950/95 px-6 py-6 lg:hidden overflow-hidden"
           >
             <nav className="flex flex-col gap-6">
               {links.map((link, i) => (
@@ -110,6 +110,7 @@ export function NavBar() {
                   </NavLink>
                 </motion.div>
               ))}
+              <a href={`tel:${site.phoneHref}`} className="mt-2 text-primary">{site.phoneDisplay}</a>
             </nav>
           </motion.div>
         )}

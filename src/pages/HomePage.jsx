@@ -1,16 +1,15 @@
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { PageMeta } from "../components/PageMeta.jsx";
 import { PageShell } from "../components/layout/PageShell.jsx";
 import { Hero } from "../components/ui/Hero.jsx";
 import { PrimaryButton } from "../components/ui/PrimaryButton.jsx";
 import { SecondaryButton } from "../components/ui/SecondaryButton.jsx";
 import { SectionHeading } from "../components/ui/SectionHeading.jsx";
 import { images } from "../data/assets.js";
-import { serviceCards, testimonials } from "../data/content.js";
+import { serviceCards, site, testimonials } from "../data/content.js";
 import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap.js";
 
 export function HomePage() {
-  const navigate = useNavigate();
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -111,12 +110,13 @@ export function HomePage() {
   return (
     <PageShell>
       <div ref={containerRef}>
+        <PageMeta title="Chef Georgina | Bespoke Private Dining" description="Seasonal, bespoke private dining by Chef Georgina, cooked and hosted in your home or accommodation." />
         <Hero
           image={images.hero}
           eyebrow="Private dining"
-          title="I bring the restaurant to your table"
-          copy="I write bespoke menus around seasonal ingredients and the kind of evening you want: intimate dinners, celebrations, and properly hosted nights at home."
-          primaryCta={<PrimaryButton to="/contact">Book me</PrimaryButton>}
+          title="A dining experience crafted around you"
+          copy="Chef Georgina creates memorable private dining for intimate gatherings, celebrations and get-togethers, with menus inspired by the seasons and British produce."
+          primaryCta={<PrimaryButton to="/contact">Enquire about a date</PrimaryButton>}
           secondaryCta={<SecondaryButton to="/menus">See sample menus</SecondaryButton>}
         />
 
@@ -125,19 +125,19 @@ export function HomePage() {
             <div className="portrait-container relative h-[80vh] overflow-hidden rounded-[2rem]">
               <img
                 src={images.portrait}
-                alt="Portrait placeholder"
+                alt="Chef Georgina preparing a private dining menu"
                 className="portrait-img absolute -top-[10%] left-0 h-[120%] w-full object-cover origin-center"
               />
             </div>
             <div className="space-y-10">
               <SectionHeading
                 eyebrow="How I cook"
-                title="Food that feels personal, generous, and memorable."
-                copy="I cook bespoke dinners for any occasion that matters to you, whether that’s a small gathering or a full-on celebration. Each menu is mine to write, so it fits your home, your guests, and the moment you’re trying to create."
+                title="Food that feels personal, generous and memorable."
+                copy="Indulge in authentic food made from fresh produce and local ingredients. I create a bespoke menu for your home, your guests and the moment you want to share."
               />
               <p className="max-w-2xl text-xl leading-relaxed text-on-surface-variant font-light">
-                I care about seasonality, where ingredients come from, and that
-                sense of occasion from the first course to the last bite.
+                From a small gathering to a celebratory feast, each dish reflects
+                my love of culinary craft and turns dinner into a journey to enjoy together.
               </p>
               <SecondaryButton to="/about">A bit more about me</SecondaryButton>
             </div>
@@ -148,8 +148,8 @@ export function HomePage() {
           <div className="mx-auto max-w-7xl">
             <SectionHeading
               eyebrow="What you get"
-              title="Private dining with warmth and detail."
-              copy="I build the evening around your tastes and the occasion, from quiet intimate dinners to bigger celebrations where you still want it to feel personal."
+              title="More than dinner: an occasion shaped for you."
+              copy="A crafted experience that reflects your tastes and desires, from special celebrations to relaxed gatherings in your own space."
               align="center"
             />
             <div className="services-grid mt-20 grid gap-8 md:grid-cols-3 perspective-[1000px]">
@@ -189,13 +189,12 @@ export function HomePage() {
             <div className="space-y-10">
               <SectionHeading
                 eyebrow="Fresh local ingredients"
-                title="Seasonal produce shapes what I cook."
-                copy="The best dishes start with the best ingredients. I work with fresh local produce so the menu feels vibrant, grounded, and full of flavour."
+                title="Working with the seasons, cooking sustainably."
+                copy="The best dishes start with the best ingredients. I use local and seasonal produce wherever possible, supporting independent farmers, producers and artisans."
               />
               <p className="text-xl leading-relaxed text-on-surface-variant font-light">
-                Supporting local farmers and artisans matters to me, not as a
-                buzzword but because it shows up on the plate and in how the whole
-                evening feels.
+                Shorter supply chains, thoughtful buying and careful preparation
+                support the community, reduce waste and bring authentic flavour to the plate.
               </p>
               <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
                 <div>
@@ -219,8 +218,8 @@ export function HomePage() {
           <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] border border-white/10 bg-black">
             <div className="relative min-h-[36rem]">
               <img
-                src={images.galleryD}
-                alt=""
+                src={images.moodBanner}
+                alt="Fresh pasta prepared for a Chef Georgina menu"
                 className="absolute inset-0 h-full w-full object-cover brightness-[0.45]"
               />
               <div className="absolute inset-0 bg-black/35" />
@@ -229,12 +228,11 @@ export function HomePage() {
                   A food for every mood
                 </h2>
                 <p className="mt-8 max-w-2xl text-xl leading-relaxed text-stone-200 font-light">
-                  I love building menus from fresh produce and local ingredients,
-                  and shaping them around the mood you want: relaxed, celebratory,
-                  or something in between.
+                  From relaxed sharing plates to a multi-course celebration,
+                  every menu begins with what you love and how you want the occasion to feel.
                 </p>
                 <div className="mt-12">
-                  <PrimaryButton to="/contact">Book me</PrimaryButton>
+                  <PrimaryButton to="/menus">Explore the menus</PrimaryButton>
                 </div>
               </div>
             </div>
@@ -246,21 +244,23 @@ export function HomePage() {
             <SectionHeading
               eyebrow="Reviews"
               title="Kind words from the table."
-              copy="Some lovely feedback from people I’ve cooked for."
+              copy="There is nothing more rewarding than empty plates and happy guests."
               align="center"
             />
             <div className="testimonials-grid mt-20 grid gap-8 md:grid-cols-2">
-              {testimonials.map((item) => (
+              {testimonials.slice(0, 2).map((item) => (
                 <article
                   key={item.quote}
                   className="testimonial-card rounded-[2.5rem] bg-[#dac8ae] p-12 text-stone-900 shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
                 >
                   <p className="font-serif text-5xl leading-tight text-stone-800">“</p>
                   <p className="mt-6 text-xl leading-relaxed font-serif">{item.quote}</p>
-                  <p className="mt-8 text-sm font-bold uppercase tracking-wider text-stone-700">{item.detail}</p>
+                  <p className="mt-8 text-sm font-bold uppercase tracking-wider text-stone-700">{item.attribution}</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-stone-600">{item.source}</p>
                 </article>
               ))}
             </div>
+            <div className="mt-12 text-center"><SecondaryButton to="/reviews">Read more reviews</SecondaryButton></div>
           </div>
         </section>
 
@@ -274,18 +274,19 @@ export function HomePage() {
             />
             <div className="gallery-grid mt-20 grid gap-6 md:grid-cols-4 md:grid-rows-2 h-[800px]">
               <div className="gallery-img-container overflow-hidden rounded-[2rem] md:col-span-2 md:row-span-2">
-                <img src={images.galleryA} alt="" className="gallery-img h-full w-full object-cover" />
+                <img src={images.galleryA} alt="A private dining plate by Chef Georgina" className="gallery-img h-full w-full object-cover" />
               </div>
               <div className="gallery-img-container overflow-hidden rounded-[2rem]">
-                <img src={images.galleryB} alt="" className="gallery-img h-full w-full object-cover" />
+                <img src={images.galleryB} alt="Seasonal ingredients prepared by Chef Georgina" className="gallery-img h-full w-full object-cover" />
               </div>
               <div className="gallery-img-container overflow-hidden rounded-[2rem]">
-                <img src={images.galleryC} alt="" className="gallery-img h-full w-full object-cover" />
+                <img src={images.galleryC} alt="A plated course from a private dinner" className="gallery-img h-full w-full object-cover" />
               </div>
               <div className="gallery-img-container overflow-hidden rounded-[2rem] md:col-span-2">
-                <img src={images.galleryD} alt="" className="gallery-img h-full w-full object-cover" />
+                <img src={images.galleryD} alt="Chef Georgina finishing a dish" className="gallery-img h-full w-full object-cover" />
               </div>
             </div>
+            <div className="mt-12 flex flex-wrap justify-center gap-6"><SecondaryButton to="/gallery">View the gallery</SecondaryButton><a href={site.instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-bold uppercase tracking-[0.2em] text-primary hover:text-white">Follow {site.instagramHandle}</a></div>
           </div>
         </section>
 
