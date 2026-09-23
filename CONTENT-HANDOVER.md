@@ -1,5 +1,7 @@
 # Website content handover
 
+> **23 September 2026:** See [current domain and email handover](docs/2026-09-23-domain-email-handover.md). New domain is live; branded mail and old-domain redirects remain open. Jack waived the fee in the original task.
+
 > **Current status, 8 September 2026:** This original intake template has been superseded by Georgina's completed Drive source pack and the implemented live website. The primary site is live at `https://chefgeorginastinton.co.uk/`; `https://www.chefgeorginastinton.co.uk/` is also configured, and the previous `https://georginakitchen.co.uk/` domain remains active. The source reconciliation is tracked in `work-requests/2026-09-03-georgina-all-email-updates/implementation-checklist.md`; Georgina's latest review, domain, email, fee, Google review and logo follow-up is recorded in `work-requests/2026-09-08-georgina-follow-up.md`. Blank fields below are retained as the historical intake template and should not be interpreted as current missing website content.
 
 Use this sheet to send **final copy**, **images**, and **contact details** so the live site can replace placeholder content. Fill what you can in the boxes; leave a note if something should stay as-is or be written for you.
