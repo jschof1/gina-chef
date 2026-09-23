@@ -58,3 +58,38 @@ Verified text and dates:
 Coverage limit: reviewed visible relevant text across March, April, June, July and September, not a complete exported transcript. Older voice notes were present but were not downloaded or transcribed. Consequently, no claim is made that an email choice was never discussed. No exact branded local part, destination inbox, or send-as requirement was recovered from the text inspected.
 
 Updated owner/action: Jack needs the three exact mail choices (local part, receiving inbox, branded outbound replies yes/no), plus current IONOS cancellation evidence and confirmation of existing mailboxes to preserve. Keep existing mail DNS unchanged. Old-domain identity is recovered, but no new provider mutation was performed because the complete mail route remains unresolved. Review on 24 September or immediately upon verified answers. The coordinator is to retain this as a specific input/access gate, not repeat the same source search without new evidence or a plan to review the voice notes.
+
+## Targeted voice-note review, 23 September 2026
+
+**Result:** 13 relevant incoming voice notes from Gina's personal WhatsApp chat were downloaded through the native app and transcribed locally using the installed Whisper `base.en` model. Their text was reviewed for the requested mail/domain decisions. This supersedes the earlier unreviewed-voice-note limitation for these recordings. The summaries below are faithful short notes from automated transcription, not certified verbatim quotations. No audio was uploaded to a transcription service or committed to Git.
+
+Provenance: original filenames follow `WhatsApp Audio YYYY-MM-DD at HH.MM.SS.opus`; the dates and times below are from those UI-generated names and matching chat context. Raw audio, matching `.txt` transcripts and a SHA-256 manifest remain in the originating task's private `work/gina-audio/` folder (`/Users/jack/Documents/Codex/2026-09-08/can-you-find-gina-s-project/work/gina-audio/`).
+
+| Recording date/time | Duration shown | Relevant content |
+| --- | --- | --- |
+| 19 March 14:16:38 | 6 sec | Says she paid for the domain that year and thinks it should therefore be transferable. A client belief, not a registrar transfer confirmation. |
+| 19 March 14:17:02 | 5 sec | Short unclear utterance; automated transcript is not reliable enough to interpret. No usable mail instruction recovered. Adjacent written text explicitly says “IONOS account yeah”. |
+| 19 March 14:17:52 | 35 sec | Says she deleted the website because of attempted charges, retained videos of its layout, and that the domain remains while the website is deleted. No mailbox deletion/preservation instructions. |
+| 19 March 14:18:39 | 37 sec | Wants her own site for repeat clients, already has Georgina's Kitchen cards/domain, and would consider a new domain if transfer were not possible. Provider name is mistranscribed in ASR; use the explicit adjacent IONOS text as authority. |
+| 19 March 14:19:02 | 12 sec | Explains the old site was recently removed and might need rebuilding from scratch. |
+| 19 March 14:19:54 | 41 sec | Historical discussion of build/maintenance costs and invoicing. Superseded by Jack's September fee waiver; no new fee requested. |
+| 19 March 14:20:05 | 7 sec | Asks whether the supplied videos provide the design reference. |
+| 19 March 14:24:04 | 58 sec | Says she deleted the service that day because of attempted charges; only the domain remained accessible. Reports the provider's phone adviser said the domain could be transferred and was hers for a year. Mentions possible alternative domain extensions. No exact email address or mail-account instruction. |
+| 19 March 14:24:42 | 32 sec | Discusses photos, reviews, FAQs, source notes and booking functionality. |
+| 19 March 14:25:27 | 36 sec | Asks about maintenance and editing content herself. No mail setup choice. |
+| 19 March 20:36:17 | 51 sec | Discusses mobile screenshots, videos, logo and remaining website copy. |
+| 27 March 15:56:57 | 41 sec | Believes the `.com` site was created by a platform associated with Take a Chef / Private Chef Manager; says she is trying to find out whether she has edit access, and suggests potentially using that domain and linking the other one. This is not evidence of account ownership or an instruction overriding the later purchased `.co.uk` route. |
+| 16 April 10:37:38 | 2 min 2 sec | Says the domain needs removing from a third-party website so it can be accessed independently; proposes a call and supplying content. No provider completion, cancellation receipt, mailbox inventory or mail choices. |
+
+Adjacent text correction: on 19 March at 14:29, Gina explicitly wrote “Yes - was not on wix it was on IONOS. Only thing I have left is the domain name”. The earlier uncertainty caused by Jack's Wix question is therefore resolved for this historical exchange. This does not prove the current cancellation status, nor that there are no mailboxes or mail history requiring preservation. Current DNS still pointing to IONOS mail must remain untouched pending verification.
+
+### Decisions still required
+
+- Exact branded local part at `chefgeorginastinton.co.uk`: not recovered.
+- Exact receiving inbox: not recovered; neither Hotmail nor Gmail is inferred.
+- Whether she must send/reply as the branded address: not recovered.
+- Current IONOS cancellation/renewal state and mailbox inventory/preservation: requires present provider evidence. Historical March cancellation remarks are insufficient.
+
+Temporary native UI errors (stale menu IDs and screenshot unavailable) were recovered by reselecting WhatsApp; no unresolved audio access blocker remains for the 13 files above. The five-second note remains transcription-uncertain. Do not claim these notes constitute every message ever exchanged, and do not invent missing choices.
+
+Owner remains Jack. Next check remains 24 September or immediately on explicit Gina answers/provider evidence. Ask for the three mail choices and cancellation/mailbox evidence once in the authorised client workflow; no outbound message is authorised by this source-review request. No DNS, mail, registrar, fee or live-site changes were made. The chat was returned to its latest message with an empty composer.
