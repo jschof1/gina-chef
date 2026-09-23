@@ -40,3 +40,21 @@ No client send, purchase, cancellation, DNS/mail mutation or live-site edit was 
 - https://rdap.nominet.uk/uk/domain/georginakitchen.co.uk
 - https://rdap.nominet.uk/uk/domain/chefgeorginastinton.co.uk
 - https://rdap.verisign.com/com/v1/domain/chefgeorginastinton.com
+
+## WhatsApp source recovery, 23 September 2026, approximately 18:56-19:01 UTC
+
+The exact personal WhatsApp chat named Gina was opened in the native macOS WhatsApp app. The business bridge was live (206 chats, no Gina/Georgina/Stinton name match); the personal bridge was not ready, so native UI was used. No client message was sent. The composer was left empty.
+
+Verified text and dates:
+
+- Latest visible message is Jack's delivered 8 September, 16:38 update linking `https://chefgeorginastinton.co.uk`, saying the old link still works, promising to sort email forwarding next, and waiving payment. This replaces the earlier uncertainty over whether that update was sent. No newer message was visible in this chat at inspection.
+- Gina's preceding message is the exact review/domain/email/cancellation request already captured on 8 September. It does not specify a branded local part, destination inbox, or outbound send-as requirement.
+- 3 September, 10:20: Gina asks for a domain saying “chef Georgina or chef Georgina stinton”.
+- 22 June, 09:49: Gina explicitly says “I have a domain name on ionos. Georginakitchen” and asks about taking it off IONOS and changing the IPS tag. Combined with current registrar/DNS evidence, this resolves the historical old-domain reference to `georginakitchen.co.uk`. It does not establish the cancellation's present state.
+- 27 March, 15:45: Gina sends `https://www.chefgeorginastinton.com/#main-footer` and asks whether Jack created it. At 15:51 she says she has no idea, her dad sent it, and she wonders whether a platform created it. Account control of `.com` remains unknown; do not redirect it.
+- 23 July, 11:41: Gina already supplied her Google review link: `https://g.page/r/CeDYYfUcQzhwEBM/review`. Record as client-supplied; the review destination was not independently opened/validated in this source-recovery pass. The older “review link not supplied” gate is superseded.
+- July text asks whether she can delete “Ionas” and whether the web link transferred. March text discusses cancellation and an asserted one-month domain-removal window, but adjacent conversation mentions Wix. Do not turn those historical remarks into an IONOS cancellation confirmation or current deadline.
+
+Coverage limit: reviewed visible relevant text across March, April, June, July and September, not a complete exported transcript. Older voice notes were present but were not downloaded or transcribed. Consequently, no claim is made that an email choice was never discussed. No exact branded local part, destination inbox, or send-as requirement was recovered from the text inspected.
+
+Updated owner/action: Jack needs the three exact mail choices (local part, receiving inbox, branded outbound replies yes/no), plus current IONOS cancellation evidence and confirmation of existing mailboxes to preserve. Keep existing mail DNS unchanged. Old-domain identity is recovered, but no new provider mutation was performed because the complete mail route remains unresolved. Review on 24 September or immediately upon verified answers. The coordinator is to retain this as a specific input/access gate, not repeat the same source search without new evidence or a plan to review the voice notes.
